@@ -19,6 +19,9 @@ const List = () => {
   const [min, setMin] = useState(undefined);
   const [max, setMax] = useState(undefined);
 
+  /* CREATE A API QUERY TO FIND 
+  AN SPECIFIC FILTER LIKE DETINATION + 
+  MIN_PRICE AND MAX_PRICE */
   const { data, loading, error, reFetch } = useFetch(
     `/hotels?city=${destination}&min=${min || 0}&max=${max || 999}`
   );

@@ -1,13 +1,13 @@
-import "./featuredProperties.css";
 import useFetch from "../../hooks/useFetch";
+import "./featuredProperties.css";
 
 const FeaturedProperties = () => {
-  const { data, loading, error } = useFetch("/hotels?featured=true&limit=10");
+  const { data, loading, error } = useFetch("/hotels?featured=true&limit=4");
 
   return (
     <div className="fp">
       {loading ? (
-        "Loading..."
+        "Loading"
       ) : (
         <>
           {data.map((item) => (
@@ -16,7 +16,7 @@ const FeaturedProperties = () => {
               <span className="fpName">{item.name}</span>
               <span className="fpCity">{item.city}</span>
               <span className="fpPrice">
-                Starting from {item.cheapestPrice}
+                Starting from ${item.cheapestPrice}
               </span>
               {item.rating && (
                 <div className="fpRating">

@@ -6,8 +6,8 @@ import "./login.css";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
-    username: null,
-    password: null,
+    username: undefined,
+    password: undefined,
   });
 
   const { user, loading, error, dispatch } = useContext(AuthContext);
@@ -18,8 +18,6 @@ const Login = () => {
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
-
-  /* INICIAR EL PROCESO DE LOGIN */
   const handleClick = async (e) => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
@@ -32,7 +30,7 @@ const Login = () => {
     }
   };
 
-  //console.log(user);
+  console.log(user);
 
   return (
     <div className="login">
